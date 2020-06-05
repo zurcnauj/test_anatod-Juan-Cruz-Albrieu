@@ -1,0 +1,42 @@
+
+ #form{
+    margin: auto;
+    margin-top: 2em;
+    width: 50%;
+    padding: 2em;
+    background-color: #666666;
+    border-radius: 1.5em;
+}
+
+input{
+      margin-bottom: 1em;
+      margin-left: auto;
+      margin-right: auto;
+      width: 95%;
+}
+
+.mensaje{
+      padding-top: 0.4em;
+      padding-bottom: 0.4em;
+      margin-bottom: 1em;
+
+      border-radius: 0.2em;
+
+      width: 80%;
+
+      color: #fefefe;
+      text-align: center;
+}
+
+#exito{
+      background-color: #33bb33;
+}
+
+#error{
+      background-color: #bb3333;
+}
+
+#info{
+      font-size: 1.1em;
+      color: #fdfdfd;
+}

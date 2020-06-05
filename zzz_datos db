@@ -1,0 +1,47 @@
+Clientes
+{"Field":"cliente_id","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment"}
+{"Field":"cliente_nombre","Type":"varchar(255)","Null":"NO","Key":"","Default":null,"Extra":""}
+{"Field":"cliente_dni","Type":"int(14)","Null":"NO","Key":"UNI","Default":null,"Extra":""}
+{"Field":"cliente_localidad","Type":"int(11)","Null":"NO","Key":"MUL","Default":null,"Extra":""}
+
+{"cliente_id":"1","cliente_nombre":"test","cliente_dni":"123","cliente_localidad":"2"}
+
+Localidades
+{"Field":"localidad_id","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment"}
+{"Field":"localidad_nombre","Type":"varchar(255)","Null":"NO","Key":"MUL","Default":null,"Extra":""}
+{"Field":"localidad_provincia","Type":"int(11)","Null":"NO","Key":"MUL","Default":null,"Extra":""}
+
+{"localidad_id":"1493","localidad_nombre":"'Laguna Naick Neck","localidad_provincia":"12"}
+{"localidad_id":"1504","localidad_nombre":"'San Mart\u00edn II","localidad_provincia":"12"}
+
+Provincias
+{"Field":"provincia_id","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":"auto_increment"}
+{"Field":"provincia_nombre","Type":"varchar(255)","Null":"NO","Key":"UNI","Default":null,"Extra":""}
+
+
+$tablas = $conexion->query("SHOW TABLES") or die($conexion->error);
+foreach($tablas as $tabla){
+    echo json_encode($tabla);
+    echo("</br>");
+}
+echo("</br>");
+echo "</br>";
+$contenido_cliente = $conexion->query("SHOW COLUMNS FROM clientes") or  die($conexion->error);
+foreach($contenido_cliente as $valor){
+    echo json_encode($valor);
+    echo "</br>";
+}
+echo "</br>";
+echo "</br>";
+$contenido_cliente = $conexion->query("SHOW COLUMNS FROM localidades") or  die($conexion->error);
+foreach($contenido_cliente as $valor){
+    echo json_encode($valor);
+    echo "</br>";
+}
+echo "</br>";
+echo "</br>";
+$contenido_cliente = $conexion->query("SHOW COLUMNS FROM provincias") or  die($conexion->error);
+foreach($contenido_cliente as $valor){
+    echo json_encode($valor);
+    echo "</br>";
+}
